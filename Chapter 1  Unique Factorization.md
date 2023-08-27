@@ -558,3 +558,687 @@ $$
 
 因此得到$\text{ord}_q a = e(q)$$\square$
 
+
+
+## $\S 4 \quad $环$\Z[i]$与$\Z[\omega]$
+
+作为第三章结果的应用,我们将考虑两个例子,它们在后续的$\text{Chapter}$中是有用的.
+
+令$i = \sqrt{-1}$并且考虑由复数所构成的集合$\Z[i] :=\{a+bi:a,b \in \Z\}$.这个集合对于加减法显然是封闭的.此外,若$a+bi,c+di \in \Z[i]$则$(a+bi)(c+di) = (ac-bd)+(ad+bc)i\in\Z[i]$因此$\Z[i]$对于乘法是封闭的.因此$\Z[i]$可以构成一个环.由于$\Z[i]$包含在复数域(无零因子)中,因此它是一个整环.
+
+
+
+命题$1.4.1$ $\Z[i]$是一个欧几里得整环.
+
+[证明]
+
+对于$a+bi \in \Z[i]$定义$\lambda(a+bi) = a^2+b^2$.
+
+令$\alpha = a+bi$,$\gamma = c+di$并且假设$\gamma \neq 0$.$\alpha/\gamma = r+si$其中$r$和$s$均为实数(事实上它们都是有理数).
+
+选择整数$m,n \in \Z$使得$|r - m|\leq \frac{1}{2}$且$|s - n|\leq \frac{1}{2}$.
+
+令$\delta = m+ni$.则$\delta \in \Z[i]$.有$\lambda((\alpha/\gamma)- \delta) = (r-m)^2+(s-n)^2 n\leq \frac{1}{4}+\frac{1}{4} = \frac{1}{2}$.
+
+令$\rho = \alpha - \gamma\delta$则$\rho \in \Z[i]$且有$\rho = 0$或$\lambda(\rho) = \lambda(\gamma(\alpha/\gamma - \delta)) = \lambda(\gamma)\lambda(\alpha/\gamma-\delta)\leq \frac{1}{2}\lambda(\gamma) \leq \lambda(\gamma)$
+
+因此得到$\Z[i]$是一个欧几里得整环.$\square$
+
+
+
+这个环被称为$\text{ring of Gaussian integers}$即$\text{Gaussian}$整数环,以$\text{C.F. Gauss}$的名字命名,这是因为$\text{Gauss}$首先详细地研究了它的算术性质.
+
+数字$\pm 1$,$\pm i$都是$x^4 = 1$在复数域上的根.考虑等式$x^3 = 1$.由于$x^3 -1 = (x-1)(x^2+x+1)$得到等式的根为$1,\frac{-1\pm \sqrt{-3}}{2}$.令$\omega = \frac{-1+\sqrt{-3}}{2}$得到$\omega^2 = \frac{-1-\sqrt{-3}}{2}$从而可以发现$1+\omega+\omega^2 = 0$.
+
+考虑集合$\Z[\omega] = \{a+b\omega: a,b\in \Z\}$.得到$\Z[\omega]$在加减法下是封闭的.且$(a+b\omega)(c+d\omega) = ac+bd\omega^2+(ad+bc)\omega = ac-bd(1+\omega)+(ad+bc)\omega $$= (ac-bd)+(ad+bc-bd)\omega$.因此$\Z[\omega]$对于乘法封闭.因此$\Z[\omega]$是一个环.由于$\Z[\omega]$在复数域中,因此其是一个整环.
+
+我们注意到$\Z[\omega]$在复共轭下是封闭的.事实上,因为$\overline{\sqrt{-3}}= \overline{\sqrt{3}i} = -\sqrt{3}i = - \sqrt{-3}$我们得到了$\overline{\omega} = \omega^2$.因此若$\alpha = a + b\omega \in \Z[\omega]$则有$\overline{\alpha} = a+b\overline{\omega} = a+b\omega^2 = a-b - b\omega \in \Z[\omega]$.
+
+
+
+命题$1.4.2$ $\Z[\omega]$是一个欧几里得整环.
+
+[证明]
+
+令$\alpha = a+b\omega \in \Z[\omega]$且令$\lambda(\alpha) = a^2-ab+b^2$.通过简单的计算可以得知$\lambda(\alpha) = \overline{\alpha}\alpha$.
+
+现在,令$\alpha,\beta \in \Z[\omega]$且假设$\beta \neq 0$于是有$\alpha/\beta = \alpha \overline{\beta}/\beta \overline{\beta} = r+s\omega$其中$r,s$为实数(事实上是有理数).不难发现有$\beta\overline{\beta} = \lambda(\beta)$且$\alpha\overline{\beta} \in \Z[\omega]$.
+
+可以找到两个整数$m,n$使得$|r-m|\leq\frac{1}{2}$且$|s-n|\leq \frac{1}{2}$,接着令$\gamma = m+n\omega$可以得到$\lambda(\alpha/\beta - \gamma) = (r-m)^2-(r-m)(s-n)+(s-n)^2\leq \frac{1}{4}+\frac{1}{4}+\frac{1}{4}<1$.
+
+令$\rho= \alpha-\gamma\beta$得到$\rho = 0$或$\lambda(\rho)= \lambda(\beta(\alpha/\beta - \gamma)) = \lambda(\beta) \lambda(\alpha/\beta - \gamma) <\lambda(\beta)$.
+
+因此得知$\Z[\omega]$是一个欧几里得整环.$\square$
+
+
+
+由于$\Z[i]$和$\Z[\omega]$均为欧几里得整环,因此它们都是$\text{PID}$.也就是说唯一因式分解在它们上均成立.为了进一步分析这些环,我们必须研究其上的单位和素元.在$\text{Exercise}$中有一些这种性质的结果.
+
+
+
+> ### $\text{\large{N}\small{OTES}}$ (太多了,此处并非重点,暂时不译)
+>
+> 支持唯一分解定理的环称为唯一因子分解整环$(\text{unique factorization domains(UFD)})$.事实上$\text{Euclid}$已经悄然证明了$\Z$是一个唯一因子分解整环,但是第一个明确而清晰的结果似乎是在$\text{C.F.Gauss}$的$Disquisitiones\, Arithmeticae$中被记载.$\text{Zermelo}$通过归谬法给出了一个巧妙的证明.
+
+
+
+
+
+## $\text{\large{E}\small{XERCISES}}$
+
+1. 令$a,b$为非负整数.我们可以找到非负整数$q,r$使得$a = qb + r$其中$0 \leq r<b$.证明$(a,b) = (b,r)$
+
+   
+
+   由于$a - qb = r$因此有$r \in (a,b)$,因此任意的$k \in (b,r)$都可以写为$k = s_1b+s_2r = s_1b+s_2(a-qb) = (s_1-s_2q)b +s_2a \in (a,b)$,其中$s_1,s_2\in \Z$且$q$为非负整数.
+
+   因此得知$(b,r)\subset (a,b)$.
+
+   同理证明$(a,b)\subset (b,r)$
+
+   因此有$(a,b) = (b,r)$
+
+   
+
+2. (延续上问) 若$r \neq 0$且我们可以找到$q_1$和$r_1$使得$b = q_1 r+r_1$且$0\leq r_1<r$.证明$(a,b) = (r,r_1)$.这个过程是可以重复的.证明它必然在有限步后停止.证明最后一个非零余数必然等于$(a,b)$.这个过程看起来像
+   $$
+   a&=& qb + r, &\, &0\leq r<b\\
+   b&=& q_1r+r_1 , &\, &0\leq r_1<r\\
+   r &=& q_2r_1+r_2 , &\, &0\leq r_2<r_1\\
+   \vdots\\
+   r_{k-1}&=&q_{k+1}r_k+r_{k+1} , &\,&0 \leq r_{k+1}<r_k\\
+   r_k &=& q_{k+2}r_{k+1}
+   $$
+   则$r_{k+1} = (a,b)$.这个寻找$(a,b)$的过程称为$\text{Euclidean algorithm}$.
+
+   
+
+   首先证明$(a,b) = (r,r_1)$由于$(a,b) = (b,r)$而$(b,r) = (r,r_1)$因此得知$(a,b) = (r,r_1)$.
+
+   接下来证明这个过程在持续有限步后必然停止.
+
+   假设这个过程可以无限重复下去,那么对于任意的正整数$n$都有$0< r_{n+1} < r_{n}$,且$r_{n}$和$r_{n+1}$均为整数.
+
+   由于$b$是一个整数,而$0\leq r_{n+1}<r_n<\cdots <r<b$
+
+   也就是说在经过$b$步后必然有$r_b = q_br_{b-1} = 0$.
+
+   即存在$k$使得$r_{k+2} =0$且$r_{k+1} > 0$.
+
+   因此得到这个步骤必然在有限步后停止.
+
+   接下来由于$(a,b) = (b,r) = (r,r_1) = \cdots = (r_{k-1},r_k) = (r_{k},r_{k+1}) = (r_{k+1},r_{k+2}) = (r_{k+1},0) = r_{k+1}x+0 = (r_{k+1})$因
+
+   因此$r_{k+1} = (a,b)$.
+
+   
+
+3. 计算$(187,221),(6188, 4709),(314, 159)$
+
+   读者自行计算即可
+
+   $221 = 187 + 34$
+
+   $187 = 5 \times 34+ 17$
+
+   $34 = 2 \times 17$
+
+   因此$17 = (187,221)$
+
+   
+
+   $6188 = 4709 + 1479$
+
+   $4709 = 3 \times 1479 + 272$
+
+   $1479 = 5 \times 272 + 119$
+
+   $272 = 2\times 119 + 34$
+
+   $119 = 3 \times 34+ 17$
+
+   $34 = 2\times 17$
+
+   因此$17 = (6188,4709)$
+
+   
+
+   $314 = 159 + 155$
+
+   $159 = 155+4$
+
+   $155 = 38 \times 4 + 3$
+
+   $4 = 3+1$
+
+   $3 = 3 \times 1$
+
+   因此$1 = (314,159)$
+
+   
+
+4. 令$d = (a,b)$使用$\text{Euclidean algorithm}$找到整数$m,n$使得$am+bn = d$.
+
+   
+
+   反过来使用$\text{Euclidean algorithm}$,令最后个非零元$r_{k+1} = d$.
+
+   因此有$r_k = q_{k+2}d$,
+
+   那么$r_{k-1} = q_{k+1}q_{k+2}d + d$
+
+   $r_{k-2} = q_{k}(q_{k+1}q_{k+2}d+d) + q_{k+2}d = q_kq_{k+1}q_{k+2}d+q_kd+q_{k+2}d$
+
+   $r_{k-3} = q_{k-1}(q_kq_{k+1}q_{k+2}d+q_kd+q_{k+1}d)+ q_{k+1}q_{k+2}d+d = (q_{k-1}q_kq_{k+1}q_{k+2}+q_{k-1}q_k+q_{k-1}q_{k+1}+q_{k+1}+q_{k+2}+1)d$
+
+   以此类推可以得知$m$与$n$的值.
+
+   
+
+5. 计算3中给出数的$m,n$
+
+   读者当自强
+
+   自己算吧
+
+   
+
+6. 令$a,b,c\in \Z$.证明等式$ax+by = c$有整数解当且仅当$(a,b)\mid c$.
+
+   
+
+   $(\Leftarrow)$ 若$(a,b)\mid c$则有$c \in (a,b)$因此存在$x,y \in \Z$使得$ax+by = c$.
+
+   $(\Rightarrow)$ 若$ax+by = c$有整数解,即$c \in (a,b)$因此自然有$(a,b)\mid c$
+
+   
+
+7. 令$d = (a,b)$且$a = da'$以及$b = db'$,证明$(a',b') = 1$.
+
+   
+
+   由于$d = (a,b)$因此对于任意的$c\mid a$且$c\mid b$有$c \mid d$.
+
+   若$(a',b')\neq 1$即存在$c$使得$(a',b') =c $则有$c \mid a'$且$c\mid b'$.
+
+   因此得到$a =da' =  dca''$其中$a' = ca''$,$b = db' =  dcb''$.
+
+   由于$d,c$均为整数,有$dc  > d$且$dc \mid a$,$dc \mid b$.因此有$dc \mid d$造成矛盾.
+
+   于是有$c =1$即$(a',b') = 1$.
+
+   
+
+8. 令$x_0,y_0$为$ax+by = c$的解.证明所有这样的解都形如$x = x_0 + t(b/d)$,$y = y_0 - t(a/d)$其中$d  = (a,b)$且$t \in \Z$.
+
+   
+
+   由于$d = (a,b)$因此有$(a/d,b/d) = 1$.
+
+   由于$ax+by = c$有解的条件为$(a,b)\mid c$因此有$c/d$为一个整数
+
+   令$a/d = a',b/d = b',c/d = c'$有$(a',b') = 1$
+
+   且$ax+ by = c$的解即为$a'x+b'y = c'$的解.
+
+   由于$(a',b') =1$因此$\frac{a'}{b'}$必然不为整数.
+
+   由于$y = \frac{c' - a'x}{b'} = \frac{c' - a'x_0+a'x_0 - a'x}{b'} = y_0 +\frac{a'x_0-a'x}{b'} = y_0 + a'\frac{x_0  - x}{b'}$
+
+   得到$x$必然形如$x_0 - tb'$的形式.
+
+   
+
+9. 假设$u,v \in \Z$且$(u,v) =1$.若$u\mid n$且$v\mid n$证明$uv \mid n$.并且证明若$(u,v)\neq 1$则不成立
+
+   
+
+   由于$(u,v) = 1$因此存在$s,r \in \Z$使得$us +vr = 1$.
+
+   因为$u \mid n$因此存在$t$使得$n = ut$,我们需要证明$v\mid t$
+
+   由于$v \mid n = ut$且$v \nmid u$,$(v,u) = 1$因此有$v\mid t$(命题$1.1.1$).
+
+   因此得到$uv \mid n$.
+
+   
+
+   若$(u,v) \neq 1$则无$us + vr = 1$.
+
+   则无$ust + vrt = t$即$v(es+rt) = t$因此无$v \mid t$即无法得到$uv \mid n$
+
+   
+
+10. 假设$(u,v) = 1$则$(u+v,u-v)$要么为$1$要么为$2$
+
+    
+
+    因$(u+v)+(u-v) = 2u$且$(u+v)-(u- v) = 2v$
+
+    因$(u,v) = 1$因此存在$s,r$使得$su + rv = 1$
+
+    若对于$(u+v,u-v) = x_1(u+v)+x_2(u-v) = u(x_1+x_2)+v(x_1-x_2)$不存在$x_1,x_2$使得$x_1+x_2 = s$且$x_1 - x_2 = r$则$(u+v,u-v)\neq 1$
+
+    但是因$2u,2v \in (u+v,u-v)$于是有$2su+2rv = 2 \in (u+v,u-v)$
+
+    因此$(u+v,u-v)$要么为$1$要么为$2$
+
+    
+
+11. 证明$(a,a+k)\mid k$
+
+    
+
+    即证$k \in (a,a+k) = x_1a + x_2(a+k)$其中$x_1,x_2\in \Z$取$x_1 = -1,x_2 = 1$即可
+
+    
+
+12. 假设我们将正多边形复制了几次,并试图在一个公共顶点上均匀地摆放它们.证明唯一可能是$6$个等边三角形,$4$个正方形和$3$个六边形.
+
+    
+
+    问题其实可以转化为问满足内角可以整除$2\pi$的正$n$边形有什么?
+
+    根据正$n$边形的内角和为$(n-2)\pi$得到正$n$边形的每一个内角均为$(n-2)\pi/n$.
+
+    因此问题转化为求能够整除$2$的所有$(n-2)/n = 1 - 2/n$即$\frac{2n}{n-2}$且$n$为整数的情况.
+
+    显然有$n = 3,4,6$满足情况,
+
+    对于其他的$n$,$n$为奇数时,$n-2$为奇数而$2n$为偶数,因此不成立.
+
+    当$n$为大于$6$的偶数时,$n = 2k(k >3)$那么$\frac{2n}{n-2} = \frac{4k}{2(k-1)} = \frac{2k}{k-1}$由于$k-1>2$因此得到$\frac{2n}{n-2}$均不为整数.
+
+    
+
+13. 令$n_1,n_2,\cdots,n_s \in \Z$.定义$n_1,n_2,\cdots,n_s$的最大公因子$d$证明存在整数$m_1,m_2,\cdots,m_s$使得$m_1n_1+m_2n_2+\cdots+m_sn_s = d$.
+
+    
+
+    $(\Leftarrow)$根据题意显然有$d \in (n_1,n_2,\cdots,n_s)$.因此有$(d)\subset (n_1,n_2,\cdots,n_s)$
+
+    接下来证明反向包含也成立.
+
+    任取$c \in (n_1,n_2,\cdots,n_s)$由于$d$是$n_1,n_2,\cdots,n_s$的公因子,必然有$d\mid c$因此$c\in (d)$.
+
+    因此有$(d) = (n_1,n_2,\cdots,n_s)$
+
+    则此时$d$确实为$n_1,n_2,\cdots,n_s$的最大公因子.
+
+    
+
+    $(\Rightarrow)$接下来设$d$为最大公因子.
+
+    那么对于任意的公因子$c$都有$c \mid d$.且对于任意的$n_i$均有$d \mid n_i$.
+
+    由于$d$是最大公因子,因此取$n_i = dn_i'$.
+
+    我们断言$(n_1',n_2',\cdots,n_s')=1$不然存在一个公因子$c$使得$dc > d$且$dc \mid n_i$对于任意的$n_i$均成立.
+
+    因此得到$(n_1',n_2',\cdots,n_s') = (1)$即存在$m_1,m_2,\cdots,m_s$使得$m_1n_1'+m_2n_2'+\cdots+m_sn_s' = 1$因此得到
+
+    $m_1n_1+m_2n_2+\cdots+m_sn_s = d$.
+
+    
+
+    
+
+14. 讨论$a_1x_1+a_2x_2+\cdots+a_rx_r = c$的解的性质.
+
+    
+
+    若$a_1x_1+a_2x_2+\cdots+a_rx_r = c$有解,则$c\in (a_1,a_2,\cdots,a_r)$
+
+    因此得到$(a_1,a_2,\cdots,a_r)\mid c$
+
+    
+
+15. 证明$a \in \Z$是某个整数的平方当且仅当对于所有的素数$p$都有$\text{ord}_p a$是偶数.
+
+    
+
+    若$a$是某个数$b$的平方,则对于$b$进行唯一因式分解得到
+    $$
+    b = (-1)^{\varepsilon(n)}\prod_p p^{a(p)}
+    $$
+    因此有$a = b^2$即$\text{ord}_pa = \text{ord}_pb^2 = 2\text{ord}_p b$必然是一个偶数($0$也是偶数)
+
+    
+
+    若$\text{ord}_p a$是一个偶数,则$\frac{1}{2}\text{ord}_p a$是一个整数,因此令$a'(p) = \frac{1}{2}\text{ord}_p a$从而构建一个唯一因式分解
+    $$
+    b' = \prod_pp^{a'(p)}
+    $$
+    有$b^2 = a$
+
+    
+
+16. 若$(u,v) = 1$且$uv = a^2$则$u$和$v$均为某个整数的平方.
+
+    
+
+    不难得到$\text{ord}_p uv = \text{ord}_p u + \text{ord}_p v$是偶数.
+
+    因$(u,v) =1$因此对于任意的素数$p$都有若$p \mid u$则$p \nmid v$.
+
+    因此得到$\text{ord}_p u$和$\text{ord}_p v$在同一个$p$下至多只有一个非零.
+
+    因此得到对于每一个$p$都有$\text{ord}_p u$和$\text{ord}_p v$是偶数.
+
+    因此根据15得到$u$和$v$均为某个整数的平方.
+
+    
+
+17. 证明$2$的平方根是无理数,也就是说没有有理数$r = a/b$使得$r^2 = 2$.
+
+    
+
+    由于$2$为素数,因此$2$的唯一因式分解中$\text{ord}_22 = 1$为奇数.
+
+    因此$2$不为整数的平方.
+
+    接下来证明$2$也不为有理数的平方.
+
+    对于有理数$a/b$有$a,b$均为整数,因此我们可以对于$a,b$分别进行唯一因式分解得到:
+    $$
+    a &=& (-1)^{\varepsilon(a)}\prod_p p^{a(p)}\\
+    b &=& (-1)^{\varepsilon(b)}\prod_p p^{b(p)}
+    $$
+    因此得到了$a/b = (-1)^{\varepsilon(a) - \varepsilon(b)}\prod_p p^{a(p)-b(p)}$
+
+    其中$a(p) - b(p)$也是整数.
+
+    若$r^2 = 2$则$2(a(2) - b(2)) = 1$这与$a(p) - b(p)$为整数这一事实相矛盾,因此$\sqrt{2}$是无理数
+
+    
+
+18. 证明$\sqrt[n]{m}$在$m$不为一个整数的$n$次方时是无理数.
+
+    
+
+    仍然假设$\sqrt[n]{m}$是一个有理数,即存在$a/b$使得$\sqrt[n]{m} =a/b$
+
+    由于$m$不为一个整数的$n$次方,于是存在$p$使得对于$\text{ord}_p m$有$n \nmid \text{ord}_p m$.
+
+    仍然对于$a,b$进行唯一因式分解
+
+    而后得到在素数$p$上有$a(p) - b(p)$是一个整数.
+
+    那么因为$m = (a/b)^n$,则有$n \nmid n(a(p)-b(p))$这与$a(p)-b(p)$为整数相矛盾.
+
+    因此$m$必然是一个无理数
+
+    
+
+19. 定义两个整数$a,b$的最小公倍数为一个整数$m$满足$a\mid m$且$b\mid m$且$m$可以整除$a$和$b$的任意公倍数.证明$m$是存在的,我们将使用$[a,b]$来标记它.
+
+    
+
+    考虑正整数的情况,容易扩充到$\Z$上.
+
+    首先由于$a,b$为整数,因此总是存在一个整数$m$使得$a \mid m$且$b  \mid m$(考虑$ab$)
+
+    接下来证明所有的公倍数中总是存在一个最小公倍数
+
+    我们任取一个公倍数$m_0$,使得存在一个公倍数$m_1 \mid m_0$,
+
+    然后对于$m_1$重复如上操作.
+
+    我们就可以得到一个不断上升的链$(m_0)\subset (m_1)\subset (m_2) \subset \cdots$
+
+    我们证明这条链在有限步之内会断开.
+
+    由于显然有$m_1<m_0$,且$m_1$为一个公倍数
+
+    因此经过$m_0 - \sup\{a,b\}$步后必然有$m_{m_0 - \sup\{a,b\}} = m_{m_0 - \sup\{a,b\}+1}$不然$m_{m_0 - \sup\{a,b\}+1}<\sup \{a,b\}$这与其为一个最小公倍数矛盾.
+
+    因此最小公倍数必然存在
+
+    
+
+20. 证明下述结果:
+
+    $(\text{a}) \text{ord}_p[a,b]= \max(\text{ord}_p a,\text{ord}_p b)$
+
+    $(\text{b})(a,b)[a,b] = ab$
+
+    $(\text{c})(a+b,[a,b]) = (a,b)$
+
+    
+
+    $(\text{a})$
+
+    不难发现$\text{ord}_p[a,b] \geq \max(\text{ord}_p a ,\text{ord}_pb)$这是由$a \mid [a,b]$且$b \mid [a,b]$导出的.
+
+    若有$\text{ord}_p [a,b] >\max (\text{ord}_p a, \text{ord}_p b)$则$\text{ord}_p[a,b] \geq \max (\text{ord}_p a, \text{ord}_p b)+1$.那么我们取$m = (-1)^{\varepsilon}\prod_p p^{\max(\text{ord}_pa,\text{ord}_pb)}$可以得到$a\mid m$且$b \mid m$此外还有$m\mid [a,b]$
+
+    因此$\text{ord}_p[a,b]= \max(\text{ord}_p a,\text{ord}_p b)$
+
+    
+
+    $(\text{b})$
+
+    不难发现$\text{ord}_p (a,b) = \min(\text{ord}_p a ,\text{ord}_p b)$因此可以得到$\text{ord}_p (a,b)[a,b] = \text{ord}_p a + \text{ord}_p b = \text{ord}_p ab$.由于$(a,b)$的符号默认为正,因此可以得到$[a,b]$的正负号与$ab$相同.
+
+    因此根据唯一因式分解定理得到$(a,b)[a,b] = ab$
+
+    
+
+    $(\text{c})$
+
+    首先由于$(a,b)\mid a$且$(a,b)\mid b$因此有$(a,b)\mid (a+b)$
+
+    因此可以得到$(a,b)\mid (a+b,[a,b])$
+
+    剩下内容结合21使用唯一因式分解进行证明就行了
+
+    
+
+21. 证明$\text{ord}_p (a+b) \geq \min (\text{ord}_p a,\text{ord}_p b)$当$\text{ord}_p a \neq \text{ord}_p b$时等式成立
+
+    
+
+    使用唯一因数分解可以轻松得到不等式
+
+    而$\text{ord}_2 a = \text{ord}_2 b\neq 0$时$\text{ord}_2(a+b)=1+\text{ord}_pa $
+
+    
+
+22. 若我们考虑环$k[x]$而不是环$\Z$时,前面几乎所有的练习仍然有效.事实上,在大多是情况下,我们考虑任何的欧几里得整环.本题的目的是让你相信这个事实,不过简单起见,我们将继续使用$\Z$.
+
+    
+
+23. 假设$a^2+b^2 = c^2$且$a,b,c \in \Z$.举个例子,$3^2+4^2 = 5^2$以及$5^2+12^2=13^2$.假设$(a,b) = (b,c) = (c,a) =1$.证明存在整数$u,v$使得$c-b =  2u^2$且$c+b = 2v^2$且有$(u,v) = 1$(不失一般性,可以假设$b,c$为奇数且$a$为偶数)因此$a = 2uv,b = v^2-u^2,c = v^2+u^2$.反过来说明若$u,v$已知,那么由这些公式所给出的三个数$a,b,c$满足$a^2+b^2 = c^2$.
+
+    
+
+    先证明反向
+
+    若存在$u,v$满足上式则有$a^2+b^2 = 4u^2v^2+v^4-2v^2u^2+u^4= (u^2+v^2)^2$.于是确实有$c = v^2+u^2$.
+
+    由于$(u,v) = 1$因此有$[u,v] = uv$.有$(2uv,u^2-v^2) = (2uv,u^2+v^2) =(u^2-v^2,u^2+v^2) = 1$.
+
+    再证明正向
+
+    由于$a^2+b^2 = c^2$于是有$a^2 = (c-b)(c+b)$由于$(b,c) = 1$有$(b-c,b+c) = 1$或$2$.由于我们假设了$b,c$均为奇数于是有$(b-c,b+c) = 2$,且有$2 \mid a$
+
+    因此得到$\frac{a}{2}$,$\frac{c-b}{2}$和$\frac{c+b}{2}$是一个整数.
+
+    因此可以得到$(\frac{a}{2})^2 = \frac{c-b}{2}\frac{c+b}{2}$且$(\frac{b-c}{2},\frac{b+c}{2}) = 1$.
+
+    因此根据16得知存在$u,v$使得$u^2 = \frac{c-b}{2},v^2 = \frac{b+c}{2}$.
+
+    由于$(u^2,v^2) =1$因此可以得到$(u,v) = 1$.
+
+    
+
+24. 证明恒等式
+
+    $(\text{a}) x^n -y^n = (x-y)(x^{n-1}+x^{n-2}y+\cdots + y^{n-1})$
+
+    $(\text{b})$若$n$是奇数,则$x^n+y^n = (x+y)(x^{n-1}-x^{n-2}y+x^{n-3}y^2-\cdots+y^{n-1})$
+
+    
+
+    两问均可在等式两侧同时除以$y^n$转化为等比数列求和得到,读者自行证明即可
+
+    
+
+25. 若$a^n-1$是一个素数,证明$a = 2$且$n$是一个素数.形如$2^p - 1$的素数称为$\text{Mersenne}$素数.比如说$2^3 - 1 = 7$以及$2^{5} - 1 = 31$现在暂且不知晓$\text{Mersenne}$素数是否是无穷多个的.
+
+    
+
+    $a^n - 1 = (a-1)(a^{n-1}+a^{n-2}+\cdots + 1)$为一个素数,所以有$a = 2$,
+
+    而若$n$不为素数,则存在$p,q$使得$n = pq$,而$2^n - 1 = 2^{pq} -1 = (2^p)^q -1 = (2^p -1)(2^{p(q-1)}+\cdots +1)$不为素数
+
+    
+
+26. 若$a^n + 1$是一个素数,证明$a$是偶数且$n$是$2$的幂.形如$2^{2^t}+1$的素数称为$\text{Fermat}$素数.举个例子$2^{2^1}+1 = 5$以及$2^{2^2}+1 = 17$现在暂且不知晓$\text{Fermat}$素数是否是无穷多个的.
+
+    
+
+    若$n$为奇数则$a^n+1$不为素数,因此$n$必然为偶数.
+
+    而奇数的幂为奇数,于是$a$必然为偶数.
+
+    若$n$不为$2$的幂,且$n$为偶数,则有$n = 2^mk$其中$k$为奇数,$m$为一个整数.
+
+    因此我们可以得到$x^n+1 = x^{2^mk}+1 = (x^{2m})^k+1$就可以按照24进行分解了
+
+    
+
+27. 证明对于所有的奇数$n$有$8 \mid n^2-1$若$3 \nmid n$则$6 \mid n^2 -1$
+
+    
+
+    $n = 1$时有$n^2 -1  = 0$满足条件.
+
+    对于$n \geq 3$时$n = 2k + 1,k\geq1$则有$n^2 -1 = (n-1)(n+1) = (2k+2)2k = 4(k+1)k$由于$k+1$和$k$中必然有一个是偶数
+
+    因此得到$8 \mid n^2-1$
+
+    
+
+    若$3 \nmid n$则$n = 1$时有$6\mid 0$
+
+    由于$3 \nmid n$因此有$n \neq 3k$即$n^2 -1 \neq (3k-1)(3k+1)$.
+
+    因此有$6 \mid n^2 -1$
+
+    
+
+28. 证明对于所有的$n$有$30 \mid n^5 - n$且$42 \mid n^7 - n$
+
+    
+
+    $n^5 - n = n(n^4 - 1) = n(n^2+1)(n+1)(n-1)$而$30 = 6\times 5 = 2\times 3 \times 5 = (2-1)2(2+1)(2^2+1)$
+
+    因此得到$30 \mid n^5 - n$
+
+    同理证明$42$的情况
+
+    
+
+29. 假设$a,b,c,d \subset \Z$且$(a,b)= (c,d) = 1$若$(a/b)+(c/d)$等于一个整数证明$b = \pm d$
+
+    
+
+    由于$(a/b) + (c/d)$为一个整数,由于$(a,b) = (c,d) = 1$因此$a/b$和$c/d$均为既约分数,因此自然有$b = \pm d$
+
+    
+
+30. 证明$\frac{1}{2}+\frac{1}{3}+\cdots+\frac{1}{n}$不是一个整数
+
+    
+
+    由于$(1,i) = 1,i\in \Z_{\geq 1}$因此根据$29$得知其不为一个整数
+
+    
+
+31. 证明在$\Z[i]$中有$2$被$(1+i)^2$整除.
+
+    
+
+    $(1+i)^2 = 2i$有$2 = 2i \times (-i)$因此$(1+i)^2 \mid 2$
+
+    
+
+32. 对于$\alpha = a+bi \in\Z[i]$我们定义$\lambda(\alpha) = a^2 + b^2$根据$\lambda$的性质证明$(a^2+b^2)(c^2+d^2) = (ac-bd)^2+(ad-bc)^2$
+
+    
+
+    由于$(a+bi)(c+di) = (ac-bd)+(ad-bc)i$因此$(a^2+b^2)(c^2+d^2) = \lambda(a+bi)\lambda(c+di) = \lambda((a+bi)(c+di)) = (ac-bd)^2 + (ad - bc)^2$
+
+    
+
+33. 证明$\alpha \in \Z[i]$是一个单位当且仅当$\lambda(\alpha) = 1$.这诱导了$1,-1,i,-i$是$\Z[i]$上的单位.
+
+    
+
+    若$\alpha$是一个单位,则$(\alpha) = \Z[i]$,也就是说有$\alpha \mid 1$,即$1 = t\alpha +0$由于$1 \mid \alpha$于是得到$t$也为一个单位,因此得到$\lambda(t)\lambda(\alpha) = \lambda(t\alpha) = \lambda(1) = 1$.由于$\lambda$的特性可知$\lambda(t) = \lambda(1) = \lambda(\alpha) = 1$
+
+    
+
+34. 证明$3$可以被$\Z[\omega]$的$(1-\omega)^2$整除.
+
+    
+
+    $(1-\omega)^2 = 1 - 2\omega + \omega^2 = -3\omega$因此得到$3 = (1-\omega)^2 (-3 \omega^2) = (1-\omega)^2(-3(1-\omega))$因此$(1-\omega)^2 \mid 3$.
+
+    
+
+35. 类似于33读者自证即可
+
+    
+
+36. 定义$\Z[\sqrt{-2}]$是所有形如$a+b\sqrt{-2}$的复数所构成的集合,其中$a,b \in \Z$.证明$\Z[\sqrt{-2}]$构成一个环.定义$\lambda(\alpha) = a^2+2b^2$其中$\alpha = a+b\sqrt{-2}$.使用$\lambda$证明$\Z[\sqrt{-2}]$是一个欧几里得整环
+
+    
+
+    不难验证$\Z[\sqrt{-2}]$对于加减法封闭.对于乘法有$(a+b\sqrt{-2})(c+d\sqrt{-2}) = (a-2bd)+(bc+ad)\sqrt{-2}\in \Z[\sqrt{-2}]$因此$\Z[\sqrt{-2}]$确实构成环.
+
+    接下来验证构成欧几里得整环.
+
+    考虑$\alpha = a+ b\sqrt{-2}$且$\beta = c + d\sqrt{-2}\neq 0$得到$\delta = \alpha/\beta = r+s\sqrt{-2}$.
+
+    其中$r,s$均为实数
+
+    我们可以得到两个整数$m,n$使得$|r-m|<1/2$且$|s-n|<1/2$
+
+    令$\rho = \alpha - \beta \delta$得到$\rho = 0$或$\lambda(\rho) = \lambda(\beta)\lambda(\alpha/\beta-\delta) = \lambda(\beta)\lambda(m-r+(n-s)\sqrt{-2}) <\lambda(\beta)(1/4+1/2)<\lambda(\beta)$
+
+    因此确实构成一个欧几里得整环
+
+    
+
+37. 证明$\Z[\sqrt{-2}]$的单位只有$1,-1$
+
+    
+
+    $\lambda(\alpha) = 1$
+
+    
+
+38. 假设$\pi \in \Z[i]$且$\lambda(\pi) = p$为$\Z$上的一个素数.证明$\pi$是$\Z[i]$上的一个素元.且证明相同的结果在$\Z[\omega]$和$\Z[\sqrt{-2}]$上成立
+
+    
+
+    由于$\lambda(\pi) = p$因此对于$\alpha = a+bi$,$\beta = c+di$有$p\mid \lambda (\alpha\beta) \Leftrightarrow p \mid \lambda (\alpha)\lor p \mid \lambda(\beta)$
+
+    因此我们有$\lambda(\pi)\mid \lambda(\alpha \beta) \Leftrightarrow \lambda(\pi)\mid \lambda(\alpha) \lor \lambda(\pi)\mid \lambda(\beta)$
+
+    得到$\alpha\beta = k_1\pi + 0 \Leftrightarrow \alpha = k\pi + 0 \lor \beta = t \pi +0$
+
+    因此得到$\pi$是$\Z[i]$上的一个素元
+
+    
+
+39. 证明在任意整环上有素元是不可约元.
+
+    
+
+    若整环$R$上的素元$p$可约,则有$p = qr$其中$q,r \in R$且不为单位
+
+    于是有$p \mid qr$因此$p \mid q$或$p \mid r$又因为$q \mid p$且$r \mid p$于是得到其中必有一个单位元.与假设矛盾.
+
